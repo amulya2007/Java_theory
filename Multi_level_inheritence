@@ -1,0 +1,44 @@
+// Parent class
+class Vehicle {
+    int wheels;
+    int speed;
+
+    void showDetails() {
+        System.out.println("Vehicle has " + wheels + " wheels and runs at " + speed + " km/h");
+    }
+}
+
+// Child class (inherits Vehicle)
+class Car extends Vehicle {
+    String model;
+
+    void showDetails() {
+        System.out.println("Car Model: " + model);
+        System.out.println("Wheels: " + wheels);
+        System.out.println("Speed: " + speed + " km/h");
+    }
+}
+
+// Grandchild class (inherits Car)
+class ElectricCar extends Car {
+    int batteryCapacity;
+
+    void showDetails() {
+        System.out.println("Electric Car Model: " + model);
+        System.out.println("Wheels: " + wheels);
+        System.out.println("Speed: " + speed + " km/h");
+        System.out.println("Battery Capacity: " + batteryCapacity + " kWh");
+    }
+}
+
+// Main class
+public class MultiLevelInheritanceExample {
+    public static void main(String[] args) {
+        ElectricCar eCar = new ElectricCar();
+        eCar.model = "Tesla Model 3";
+        eCar.wheels = 4;
+        eCar.speed = 180;
+        eCar.batteryCapacity = 75;
+        eCar.showDetails();
+    }
+}
