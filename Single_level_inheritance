@@ -1,0 +1,35 @@
+// Parent class
+class Vehicle {
+    int speed;
+    int wheels;
+
+    void showDetails() {
+        System.out.println("Vehicle has " + wheels + " wheels and runs at " + speed + " km/h");
+    }
+}
+
+// Child class (inherits Vehicle)
+class Car extends Vehicle {
+    String model;
+
+    void showDetails() {
+        System.out.println("Car Model: " + model);
+        System.out.println("Car has " + wheels + " wheels and runs at " + speed + " km/h");
+    }
+}
+
+// Main class
+public class SingleLevelInheritanceExample {
+    public static void main(String[] args) {
+        Car car1 = new Car();
+        car1.model = "Honda City";
+        car1.speed = 120;
+        car1.wheels = 4;
+        car1.showDetails();
+
+        Vehicle v1 = new Vehicle();
+        v1.speed = 80;
+        v1.wheels = 2;
+        v1.showDetails();
+    }
+}
